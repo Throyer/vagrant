@@ -1,3 +1,6 @@
+# Vagrant example
+This repository is a basic example of Vagrant witch puppet and ansible configurations
+
 # Requirements
 - vagrant: `2.2.18`
 ________________
