@@ -1,0 +1,4 @@
+**.log
+.vagrant
+id_ubuntu
+configurations/id_ubuntu.pub
