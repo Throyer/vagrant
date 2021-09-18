@@ -8,6 +8,7 @@ ________________
 ```shell
 $ ./generate-key.sh
 ```
+
 _____________________
 
 ### Simplified start
@@ -41,3 +42,17 @@ $ vagrant destroy
 ```
 
 > you run commands individually witch `vagrant up mysql` instead run for all vms
+
+
+
+_____________
+
+### global commands
+
+```shell
+# all vms status
+$ vagrant global-status
+
+# clean cache
+$ vagrant global-status --prune
+```
