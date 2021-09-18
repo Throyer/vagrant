@@ -87,4 +87,20 @@ Vagrant.configure("2") do |config|
                /vagrant/configurations/ansible/hosts \
                /vagrant/configurations/ansible/playbook.yml"
   end
+
+  # config.vm.define "docker" do |docker|
+  #   docker.vm.provider "virtualbox" do |virtualbox|
+  #     virtualbox.name = "ubuntu_docker"
+  #     virtualbox.memory = 1024
+  #     virtualbox.cpus = 2
+  #   end
+  # 
+  #   docker.vm.provision "shell",
+  #     inline: "apt-get update && \
+  #              apt-get install -y docker.io && \
+  #              apt-get install docker-compose -y && \
+  #              usermod -aG docker vagrant && \
+  #              systemctl enable docker.service && \
+  #              systemctl enable containerd.service"
+  # end
 end
