@@ -7,6 +7,11 @@ Vagrant.configure("2") do |config|
   # -- BASE LINUX DISTRO TO VMS
   config.vm.box = "ubuntu/bionic64"
 
+  config.vm.provider "virtualbox" do |virtualbox|
+    virtualbox.memory = 256
+    virtualbox.cpus = 1
+  end
+
   config.vm.define "mysql" do |mysql|
     # -- PRIVATE NETWORK EXAMPLES
     # mysql.vm.network "private_network", ip: "192.168.1.11"
@@ -20,6 +25,12 @@ Vagrant.configure("2") do |config|
     # mysql.vm.synced_folder "./shared", "/shared"
     # mysql.vm.synced_folder ".", "/vagrant", disabled: true
 
+    mysql.vm.provider "virtualbox" do |virtualbox|
+      virtualbox.name = "ubuntu_mysql"
+      virtualbox.memory = 1024
+      virtualbox.cpus = 2
+    end
+
     mysql.vm.network "forwarded_port", guest: 3306, host: 3306
 
     mysql.vm.network "private_network", ip: "192.168.1.11"
@@ -28,7 +39,14 @@ Vagrant.configure("2") do |config|
   end
 
   # -- APACHE/PHP WITCH puppet EXAMPLE
-  config.vm.define "apache" do |apache|    
+  config.vm.define "apache" do |apache|
+
+    apache.vm.provider "virtualbox" do |virtualbox|
+      virtualbox.name = "ubuntu_apache"
+      virtualbox.memory = 1024
+      virtualbox.cpus = 2
+    end
+
     apache.vm.network "forwarded_port", guest: 8080, host: 8080
 
     apache.vm.network "private_network", ip: "192.168.1.12"
