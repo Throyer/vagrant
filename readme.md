@@ -10,6 +10,14 @@ $ ./generate-key.sh
 ```
 _____________________
 
+### Simplified start
+```shell
+$ ./generate-key.sh && \
+  vagrant up && \
+  vagrant halt ansible && \
+  vagrant destroy -f ansible
+```
+
 ### start vms
 ```shell
 $ vagrant up
