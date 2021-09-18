@@ -55,4 +55,7 @@ $ vagrant global-status
 
 # clean cache
 $ vagrant global-status --prune
+
+# show all box
+$ vagrant box list
 ```
